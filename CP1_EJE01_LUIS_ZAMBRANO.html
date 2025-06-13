@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae - Luis Teodoro Zambrano Rodriguez</title>
+    <link rel="stylesheet" href="eje01.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+
+
+/* Variables CSS */
+:root {
+    --primary-blue: #348adb; /* Azul primario */
+    --dark-blue: #2c3e50;    /* Azul oscuro */
+    --text-dark: #333;       /* Texto oscuro */
+    --light-bg: #f8f8f8;     /* Fondo claro */
+    --white: #ffffff;
+    --border-light: #eee;    /* Borde claro */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    max-width: 1000px;
+    margin: 30px auto;
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* --- Encabezado --- */
+.header {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 40px 20px;
+    width: 100%;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-blue);
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin: 10px 0 5px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.header .title {
+    font-size: 1.2em;
+    color: var(--primary-blue);
+    margin-top: 0;
+}
+
+/* --- Columnas de Contenido --- */
+.sidebar {
+    flex: 1;
+    padding: 25px;
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+
+.main-content {
+    flex: 2;
+    padding: 25px;
+    background-color: var(--white);
+}
+
+/* --- Estilos de Secciones (Cards) --- */
+section.card { /* Aplicado directamente a la etiqueta section con clase card */
+    background-color: var(--white); /* Para main-content */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-light);
+}
+
+.sidebar section.card {
+    background-color: #3a5068; /* Tono de azul ligeramente diferente para sidebar */
+    color: var(--white);
+    border-color: var(--primary-blue);
+}
+
+/* --- Títulos y Texto --- */
+h2 {
+    font-size: 1.6em;
+    margin: 0 0 10px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+.main-content h2 {
+    border-bottom-color: var(--dark-blue);
+    color: var(--dark-blue);
+}
+
+h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: var(--primary-blue);
+}
+
+p {
+    margin-bottom: 8px;
+}
+
+/* --- Listas (Contacto, Habilidades, etc.) --- */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+    padding-left: 20px;
+    position: relative;
+}
+
+ul li::before {
+    content: '•'; /* Viñeta simple */
+    color: var(--primary-blue);
+    font-size: 1.1em;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.sidebar ul li::before {
+    color: var(--white); /* Viñeta blanca en sidebar */
+}
+
+/* --- Experiencia/Educación --- */
+.job-entry, .education-entry {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.job-entry:last-child, .education-entry:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.job-entry .company, .education-entry .institution {
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+.job-entry .dates, .education-entry .dates {
+    font-style: italic;
+    color: #666;
+    display: block;
+}
+
+.sidebar .job-entry .company,
+.sidebar .job-entry .dates,
+.sidebar .education-entry .institution,
+.sidebar .education-entry .dates {
+    color: var(--light-bg); /* Texto claro en sidebar */
+}
+
+/* --- Pie de Página --- */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    font-size: 0.85em;
+    margin-top: 30px;
+}
+
+/* --- Responsividad (simplificada) --- */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        margin: 10px;
+        border-radius: 0;
+    }
+
+    .sidebar, .main-content {
+        flex: none;
+        width: auto;
+        padding: 20px;
+    }
+
+    .sidebar {
+        border-bottom: 1px solid var(--primary-blue);
+    }
+}
+
+</style>
+
+
+
+</head>
+<body>
+    <header class="header">
+        <img src="https://previews.123rf.com/images/dreamsvector/dreamsvector1709/dreamsvector170900090/86917315-young-afro-man-avatar-character-male-face-portrait-cartoon-person-illustration-adult-design-human.jpg" alt="Foto LUIS" class="profile-pic">
+        <h1>LUIS TEODORO <br> ZAMBRANO <br> RODRIGUEZ</h1>
+        <p class="title">TECNÓLOGO EN DESARROLLO DE SOFTWARE</p>
+    </header>
+
+    <main class="container">
+        <section class="sidebar">
+            <section class="card"> <h2>Datos personales</h2>
+                <p><strong>Nombre:</strong> Luis Teodoro Zambrano Rodriguez</p>
+                <p><strong>Email:</strong> luisinzr2040@gmail.com</p>
+                <p><strong>Teléfono:</strong> 0985392021</p>
+                <p><strong>Dirección:</strong> 10 DE AGOSTO Y CALDERON, EC1020102 BABAHYOYO</p>
+            </section>
+
+            <section class="card"> <h2>Formación</h2>
+                <h3>TECNÓLOGO EN DESARROLLO DE SOFTWARE</h3>
+                <p>INSTITUTO TECNOLÓGICO BOLIVARIANO</p>
+                <p>Abr 2022 - Oct 2024</p>
+                <ul>
+                    <li>Desarrollo y diseño de aplicaciones utilizando diferentes lenguajes de programación como Java, Python y C#</li>
+                </ul>
+            </section>
+        </section>
+
+        <section class="main-content">
+            <section class="card"> <h2>Perfil</h2>
+                <p>Tecnólogo en Desarrollo de Software con una mentalidad orientada a la resolución de problemas y una gran capacidad para transformar requisitos complejos en soluciones de software funcionales y eficientes. Comprometido con las buenas prácticas de desarrollo y la innovación tecnológica, siempre buscando optimizar procesos y mejorar la experiencia del usuario. </p>
+            </section>
+
+            <section class="card"> <h2>Experiencia</h2>
+                <div class="job-entry">
+                    <h3>SUPERVISOR DE PLANTA</h3>
+                    <p class="company">COTEC, GUAYAQUIL</p>
+                    <p class="dates">May 2018 - Presente</p>
+                    <ul>
+                        <li>Supervisar y coordinar las actividades diarias del área de producción asegurando el cumplimiento de las metas y estándares de calidad. </li>
+                    </ul>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Luis  Zambrano Rodriguez. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+
+</html>
