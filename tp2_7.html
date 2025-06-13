@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Diseño Navegación</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    nav {
+      background-color: #2a9d8f;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:active {
+      background-color: #1d6f63;
+    }
+
+    section {
+      padding: 40px;
+      margin: 20px;
+      background-color: white;
+      border-radius: 8px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h2 {
+      color: #2a9d8f;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <nav>
+    <!-- Enlaces internos -->
+    <a href="#biografia">Biografía</a>
+    <a href="#pasatiempos">Pasatiempos</a>
+    <a href="#formulario">Formulario</a>
+
+    <!-- Enlaces externos -->
+    <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+    <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+  </nav>
+
+  <!-- Sección de biografía -->
+  <section id="biografia">
+    <h2>Biografía</h2>
+    <p><strong>Luis Zambrano</strong>, de 45 años, es un profesional originario de Babahoyo. Actualmente, está cursando Ingeniería en Sistemas en el Instituto Tecnológico Superior de Babahoyo (ITB). En el ámbito laboral, Luis se desempeña en una empresa ubicada en Guayaquil, vía a la costa, donde aplica sus conocimientos y habilidades técnicas. Adicionalmente, Luis tiene un interés particular en el fútbol, lo que representa una de sus actividades recreativas.</p>
+  </section>
+
+  <!-- Sección de pasatiempos -->
+  <section id="pasatiempos">
+    <h2>Pasatiempos</h2>
+    <ul>
+      <li>Ver fútbol</li>
+      <li>Tecnología</li>
+      <li>Software IA</li>
+    </ul>
+  </section>
+
+  <!-- Sección de formulario -->
+  <section id="formulario">
+    <h2>Formulario de contacto</h2>
+    <form>
+      <label>Nombre:<br><input type="text" name="nombre" required></label><br><br>
+      <label>Correo electrónico:<br><input type="email" name="correo" required></label><br><br>
+      <label>Edad:<br><input type="number" name="edad" min="1" max="120" required></label><br><br>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+</body>
+</html>

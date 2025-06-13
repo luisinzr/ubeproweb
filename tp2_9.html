@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Diseño Navegación</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    nav {
+      background-color: #2a9d8f;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:active {
+      background-color: #1d6f63;
+    }
+
+    section {
+      padding: 40px;
+      margin: 20px;
+      background-color: white;
+      border-radius: 8px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h2 {
+      color: #2a9d8f;
+    }
+
+    /* Estilos para la galería de pasatiempos */
+    .galeria-pasatiempos {
+        display: flex; /* Permite que los elementos se coloquen uno al lado del otro */
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea en pantallas pequeñas */
+        justify-content: center; /* Centra las imágenes horizontalmente */
+        gap: 25px; /* Espacio entre cada imagen */
+        padding: 20px 0; /* Un poco de padding arriba y abajo */
+    }
+
+    .galeria-pasatiempos figure {
+        margin: 0; /* Elimina el margen por defecto de figure */
+        text-align: center; /* Centra la imagen y la leyenda */
+        background-color: #fff; /* Fondo blanco para cada figura */
+        padding: 10px; /* Relleno alrededor de la imagen y texto */
+        border-radius: 8px; /* Bordes redondeados */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        transition: transform 0.2s ease-in-out; /* Animación al pasar el ratón */
+        flex-basis: calc(33% - 25px); /* Intenta poner 3 elementos por fila, ajustando el gap */
+        min-width: 180px; /* Ancho mínimo para evitar que se hagan muy pequeñas */
+        max-width: 220px; /* Ancho máximo para cada figura */
+    }
+
+    .galeria-pasatiempos figure:hover {
+        transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
+    }
+
+    .galeria-pasatiempos img {
+        width: 100%; /* La imagen ocupa todo el ancho de su contenedor figure */
+        height: 150px; /* Altura fija para todas las imágenes */
+        object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsión */
+        border-radius: 5px; /* Bordes redondeados para la imagen */
+        margin-bottom: 10px; /* Espacio debajo de la imagen */
+    }
+
+    .galeria-pasatiempos figcaption {
+        font-weight: bold;
+        color: #333;
+        font-size: 1.1em;
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#biografia">Biografía</a>
+    <a href="#pasatiempos">Pasatiempos</a>
+    <a href="#formulario">Formulario</a>
+
+    <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+    <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+  </nav>
+
+  <section id="biografia">
+    <h2>Biografía</h2>
+    <p><strong>Luis Zambrano</strong>, de 45 años, es un profesional originario de Babahoyo. Actualmente, está cursando Ingeniería en Sistemas en el Instituto Tecnológico Superior de Babahoyo (ITB). En el ámbito laboral, Luis se desempeña en una empresa ubicada en Guayaquil, vía a la costa, donde aplica sus conocimientos y habilidades técnicas. Adicionalmente, Luis tiene un interés particular en el fútbol, lo que representa una de sus actividades recreativas.</p>
+  </section>
+
+  <section id="pasatiempos">
+    <h2>Galería de Pasatiempos</h2>
+    <div class="galeria-pasatiempos">
+      <figure>
+        <img src="https://i.blogs.es/73ff67/futbol/1366_2000.webp" alt="VER FOTBOL">
+        <figcaption>Fútbol</figcaption>
+      </figure>
+      <figure>
+        <img src="https://ecosistemas.win/wp-content/uploads/la-tecnologia.jpg" alt="TECNOLOGIA">
+        <figcaption>Tecnología</figcaption>
+      </figure>
+      <figure>
+        <img src="https://www.adecco.es/-/media/adeccogroup/brands/adecco-global-2016/spain/media/insights/tecnologias-del-futuro-y-el-impacto-en-tu-negocio.jpg?h=2812&iar=0&w=5000&rev=b4f6ccaaa514422dae2be7358b1dc32b&hash=FB0B714ADDDE4FAC714B80A5F534EE29" alt="SOFTWARE IA">
+        <figcaption>Software IA</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="formulario">
+    <h2>Formulario de contacto</h2>
+    <form>
+      <label>Nombre:<br><input type="text" name="nombre" required></label><br><br>
+      <label>Correo electrónico:<br><input type="email" name="correo" required></label><br><br>
+      <label>Edad:<br><input type="number" name="edad" min="1" max="120" required></label><br><br>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+</body>
+</html>
+
+<style>
+    /* Estilos para el disparador de la galería */
+    .gallery-trigger {
+        cursor: pointer;
+        color: #007bff; /* Color para que parezca un enlace */
+        text-decoration: underline;
+        font-weight: bold;
+        display: inline-block; /* Permite aplicar margen y padding */
+        margin-bottom: 15px;
+        padding: 5px;
+    }
+
+    .gallery-trigger:hover {
+        color: #0056b3;
+    }
+
+    /* Estilos para la galería modal */
+    .modal-gallery {
+        display: none; /* Oculto por defecto */
+        position: fixed; /* Posición fija en la ventana */
+        z-index: 1000; /* Asegura que esté por encima de todo */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto; /* Permite desplazamiento si el contenido es grande */
+        background-color: rgba(0,0,0,0.8); /* Fondo semi-transparente oscuro */
+        justify-content: center; /* Centra el contenido horizontalmente */
+        align-items: center; /* Centra el contenido verticalmente */
+        backdrop-filter: blur(5px); /* Efecto de desenfoque en el fondo */
+    }
+
+    .modal-content {
+        position: relative; /* Para posicionar el botón de cerrar */
+        background-color: #fefefe;
+        margin: auto; /* Centra el modal */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Ancho del contenido del modal */
+        max-width: 900px; /* Ancho máximo */
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        animation: fadeIn 0.3s ease-out; /* Animación de aparición */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Animación de aparición */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    .close-button {
+        color: #aaa;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    .close-button:hover,
+    .close-button:focus {
+        color: #333;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Columnas responsivas */
+        gap: 15px; /* Espacio entre imágenes */
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .gallery-grid img {
+        width: 100%;
+        height: 150px; /* Altura fija para uniformidad */
+        object-fit: cover; /* Recorta la imagen para llenar el espacio */
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .gallery-grid img:hover {
+        transform: scale(1.05); /* Efecto de zoom en hover */
+    }
+
+    /* Estilos para la miniatura inicial de la galería */
+    #first-gallery-thumb {
+        width: 200px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 15px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+        transition: transform 0.2s ease-in-out;
+    }
+
+    #first-gallery-thumb:hover {
+        transform: scale(1.03);
+    }
+</style>
+
+<section id="GALERIA">
+    <h2>GALERIA DE IMAGENES</h2>
+    <p>PARA VER LA GALERIA DA CLICK EN LA PALABRA VER O EN LA FOTO <span class="gallery-trigger" onclick="openGallery()">VER </p>
+    <img id="first-gallery-thumb" src="https://picsum.photos/seed/hobbies/200/150" alt="Vista previa de la galería" onclick="openGallery()">
+
+    <div id="myGalleryModal" class="modal-gallery">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeGallery()">&times;</span>
+        <h3>Galería de Pasatiempos de Luis</h3>
+        <div class="gallery-grid">
+          <img src="https://picsum.photos/seed/soccer/300/200" alt="Fútbol en acción">
+          <img src="https://picsum.photos/seed/coding/300/200" alt="Programación y desarrollo">
+          <img src="https://picsum.photos/seed/artificial_intelligence/300/200" alt="Concepto de IA">
+          <img src="https://picsum.photos/seed/gamer/300/200" alt="Videojuegos">
+          <img src="https://picsum.photos/seed/music/300/200" alt="Escuchando música">
+          <img src="https://picsum.photos/seed/reading/300/200" alt="Leyendo un libro">
+          </div>
+      </div>
+    </div>
+</section>
+
+<script>
+    // Obtener el elemento modal
+    var modal = document.getElementById("myGalleryModal");
+
+    // Función para abrir la galería
+    function openGallery() {
+      modal.style.display = "flex"; // Usa flex para centrar el contenido
+    }
+
+    // Función para cerrar la galería
+    function closeGallery() {
+      modal.style.display = "none";
+    }
+
+    // Cierra la galería si se hace clic fuera del contenido del modal
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+</script>

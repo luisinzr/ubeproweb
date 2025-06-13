@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Estilos con css</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fef6e4;
+            color: #333;
+            margin: 40px;
+        }
+
+        h1 {
+            color: #2a9d8f;
+            font-size: 36px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 20px auto;
+        }
+
+        .botones {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #btnFondo {
+            background-color: #2a9d8f;
+            color: white;
+        }
+
+        #btnLetra {
+            background-color: #264653;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mi Biografía</h1>
+
+    <p><strong>Luis Zambrano</strong>, de 45 años, es un profesional originario de Babahoyo. Actualmente, está cursando Ingeniería en Sistemas en el Instituto Tecnológico Superior de Babahoyo (ITB). En el ámbito laboral, Luis se desempeña en una empresa ubicada en Guayaquil, vía a la costa, donde aplica sus conocimientos y habilidades técnicas. Adicionalmente, Luis tiene un interés particular en el fútbol, lo que representa una de sus actividades recreativas.</p>
+
+    <div class="botones">
+        <button id="btnFondo">Cambiar Fondo</button>
+        <button id="btnLetra">Cambiar Letra</button>
+    </div>
+
+    <script>
+        const btnFondo = document.getElementById('btnFondo');
+        const btnLetra = document.getElementById('btnLetra');
+
+        btnFondo.addEventListener('click', () => {
+            document.body.style.backgroundColor =
+                document.body.style.backgroundColor === 'lightblue' ? '#fef6e4' : 'lightblue';
+        });
+
+        btnLetra.addEventListener('click', () => {
+            document.body.style.color =
+                document.body.style.color === 'darkred' ? '#333' : 'darkred';
+        });
+    </script>
+
+</body>
+</html>
