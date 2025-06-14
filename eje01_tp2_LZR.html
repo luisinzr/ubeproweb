@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 1 - Cambio de Estilo al Clic</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f0f0f0;
+    }
+
+    #caja {
+      width: 300px;
+      height: 150px;
+      margin: 0 auto 20px;
+      background-color: #e0e0e0;
+      border-radius: 10px;
+      line-height: 150px;
+      font-size: 20px;
+      color: #333;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #008cba;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #005f73;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="caja">Haz clic en el botón</div>
+  <button onclick="cambiarEstilo()">Cambia color de la caja</button>
+
+  <script>
+    function cambiarEstilo() {
+      const caja = document.getElementById('caja');
+      // Colores aleatorios para probar el cambio
+      const colores = ['#ffadad', '#caffbf', '#9bf6ff', '#ffc6ff', '#fdffb6', '#a0c4ff'];
+      const textos = ['¡Rosado!', '¡Verde!', '¡Turqueza!', '¡Violeta!', '¡Amarillo!', '¡azul!'];
+
+      // Seleccionar color y texto aleatorio
+      const indice = Math.floor(Math.random() * colores.length);
+      caja.style.backgroundColor = colores[indice];
+      caja.textContent = textos[indice];
+      caja.style.color = '#000';
+    }
+  </script>
+
+</body>
+</html>
