@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Validación de Contraseña</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #3c6c8f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 25px;
+}
+     label {
+      color: white; /* Color etiquetas */
+      font-size: 20px;
+    }
+    
+     h3 {
+      color: white; /* Color del registro */
+      font-size: 40px;
+    }
+}
+    }
+
+    form {
+      background-color: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      width: 200px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid red;
+    }
+
+    button {
+      background-color: #00796b;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 20px;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+   
+  
+  </style>
+  
+</head>
+<body>
+
+  <form id="miFormulario">
+    <h3>Registro</h3>
+  
+    <label>Nombre:</label> 
+    <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+
+    <label>Correo electrónico:</label>
+    <input type="email" id="correo" placeholder="ejemplo@correo.com">
+
+    <label>Contraseña:</label>
+    <input type="password" id="clave" placeholder="Mínimo 6 caracteres">
+
+    <p class="error" id="mensajeError"></p>
+    
+    <button type="submit">Enviar</button>
+  </form>
+
+  <script>
+    const formulario = document.getElementById('miFormulario');
+    const error = document.getElementById('mensajeError');
+
+    formulario.addEventListener('submit', function(evento) {
+      evento.preventDefault();
+
+      const nombre = document.getElementById('nombre').value.trim();
+      const correo = document.getElementById('correo').value.trim();
+      const clave = document.getElementById('clave').value.trim();
+
+      if (nombre === '' || correo === '' || clave === '') {
+        error.textContent = 'Por favor, completa todos los campos.';
+       }else if (clave.length < 6) {
+        error.textContent = 'La contraseña debe tener al menos 6 caracteres.';
+      } else {
+        error.textContent = '';
+        alert('Formulario enviado correctamente ✅');
+        // formulario.submit(); // descomenta si deseas enviarlo
+      }
+      function showTime() {
+	document.getElementById('currentTime').innerHTML = new Date().toUTCString();
+     }
+       showTime();
+       setInterval(function () {
+	     showTime();
+      }, 1000);
+      
+    });
+    
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reloj *****ógico</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #5c162e;
+    }
+
+    .reloj {
+      width: 300px;
+      height: 300px;
+      border: 10px solid #333;
+      border-radius: 80%;
+      position: relative;
+      background: white;
+    }
+
+    .manecilla {
+      position: absolute;
+      width: 50%;
+      height: 4px;
+      background-color: black;
+      top: 50%;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+      transition: transform 0.05s ease-in-out;
+    }
+
+    .hora {
+      height: 8px;
+      background-color: #222;
+    }
+
+    .minuto {
+      height: 5px;
+      background-color: #555;
+    }
+
+    .segundo {
+      height: 3px;
+      background-color: red;
+    }
+
+    .centro {
+      position: absolute;
+      width: 20px;
+      height: 12px;
+      background-color: #000;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="reloj">
+    <div class="manecilla hora" id="hora"></div>
+    <div class="manecilla minuto" id="minuto"></div>
+    <div class="manecilla segundo" id="segundo"></div>
+    <div class="centro"></div>
+  </div>
+
+  <script>
+    
+    function actualizarReloj() {
+      const ahora = new Date();
+
+      const segundos = ahora.getSeconds();
+      const minutos = ahora.getMinutes();
+      const horas = ahora.getHours();
+
+      const gradoSegundo = segundos * 6;           // 360 / 60
+      const gradoMinuto = minutos * 6 + segundos * 0.1; // Ajuste suave
+      const gradoHora = (horas % 12) * 30 + minutos * 0.5; // 360 / 12 + ajuste
+
+      document.getElementById('segundo').style.transform = `rotate(${gradoSegundo}deg)`;
+      document.getElementById('minuto').style.transform = `rotate(${gradoMinuto}deg)`;
+      document.getElementById('hora').style.transform = `rotate(${gradoHora}deg)`;
+    }
+
+    setInterval(actualizarReloj, 1000); // Actualiza cada segundo
+    actualizarReloj(); // Llamada inicial
+  </script>
+
+</body>
+</html>
