@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cambio de Imagen al Pasar el Ratón</title>
+  
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      padding: 25px;
+    }
+
+    #imagen {
+      width: 300px;
+      height: 200px;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+    #imagen:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <img id="imagen"
+       src="https://loremipsum.imgix.net/oPtkn7DsBOsv8aitV1qns/1606c26302d81bab448e3a39581f86b5/lorem-flickr-1280x720.jpg?w=1280&q=60&auto=format,compress"
+       alt="Imagen original"
+       onmouseover="cambiarImagen()"
+       onmouseout="restaurarImagen()"
+       >
+
+  <script>
+    function cambiarImagen() {
+      document.getElementById('imagen').src = 'https://placebear.com/300/200';
+    }
+
+    function restaurarImagen() {
+      document.getElementById('imagen').src = 'https://loremipsum.imgix.net/oPtkn7DsBOsv8aitV1qns/1606c26302d81bab448e3a39581f86b5/lorem-flickr-1280x720.jpg?w=1280&q=60&auto=format,compress';
+    }
+  </script>
+
+</body>
+
+<!--AQUI ESTA INCLUIDO EL SCRIPT con el tiempo de respuesta -->
+
+<script>
+function showTime() {
+	document.getElementById('currentTime').innerHTML = new Date().toUTCString();
+}
+showTime();
+setInterval(function () {
+	showTime();
+}, 5000); 
+
+</script>
+
+</html>
