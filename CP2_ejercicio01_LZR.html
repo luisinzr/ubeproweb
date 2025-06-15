@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>CP2 ejercicio 1 Carrusel de Imágenes</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: blue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .carrusel {
+      position: relative;
+      width: 600px;
+      height: 350px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00bfa6;
+    }
+
+    .imagenes {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .imagenes img {
+      width: 600px;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .boton {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 20px;
+      z-index: 1;
+    }
+
+    .boton.izquierda {
+      left: 10px;
+    }
+
+    .boton.derecha {
+      right: 10px;
+    }
+
+    .boton:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="carrusel">
+    <div class="imagenes" id="carrusel">
+      <img src="https://loremipsum.imgix.net/gPyHKDGI0md4NkRDjs4k8/36be1e73008a0181c1980f727f29d002/avatar-placeholder-generator-500x500.jpg?w=1280&q=60&auto=format,compress" alt="Imagen 1">
+      <img src="https://loremipsum.imgix.net/7zbCeuCWx04P8xkAIMyHqb/1f29220626a7241442130a9780c6885a/bacon-mockup-1280x720.jpg?w=1280&q=60&auto=format,compress">
+      <img src="https://loremipsum.imgix.net/3dBOXL8qJCgYAtSbkGvBw1/1da2fc1fdeba14a0e728ab15c1e741b7/dummy-image-generator-1280x720.jpg?w=1280&q=60&auto=format,compress">
+       <img src="https://loremipsum.imgix.net/JVN7uKOhy2mCHDoTg64ZR/faad2473a2d27e7be45393c5a1592a1a/assets.so-game-1280x720.png?w=1280&q=60&auto=format,compress" alt="Imagen 3">
+    </div>
+    <button class="boton izquierda" id="btnAnterior">Atras❮</button>
+    <button class="boton derecha" id="btnSiguiente">Siguiente❯</button>
+  </div>
+
+  <script>
+    const carrusel = document.getElementById('carrusel');
+    const total = carrusel.children.length;
+    let indice = 0;
+
+    function mostrarImagen(i) {
+      carrusel.style.transform = `translateX(-${i * 600}px)`;
+    }
+
+    function siguiente() {
+      indice = (indice + 1) % total;
+      mostrarImagen(indice);
+    }
+
+    function anterior() {
+      indice = (indice - 1 + total) % total;
+      mostrarImagen(indice);
+    }
+
+    document.getElementById('btnSiguiente').addEventListener('click', siguiente);
+    document.getElementById('btnAnterior').addEventListener('click', anterior);
+
+    // Cambio automático cada 3 seg.
+    setInterval(siguiente, 3000);
+  </script>
+
+</body>
+</html>
+
