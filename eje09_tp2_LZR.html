@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Temporizador Personalizable</title>
+  <style>
+    body {
+      background-color: red;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 80vh;
+    }
+
+    h1 {
+      color: white;
+      font-size: 40px;
+    }
+
+    #temporizador {
+      font-size: 60px;
+      margin: 20px;
+      padding: 20px 40px;
+      border: 3px solid #00e676;
+      border-radius: 10px;
+      background-color: #000;
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 5px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    input {
+      width: 80px;
+      text-align: center;
+    }
+
+    button {
+      background-color: #00e676;
+      color: #000;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #00c853;
+      
+    }
+    
+    label {
+      color: white;
+      font-size: 20px;
+      
+      }
+
+    .controles {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Temporizador</h1>
+
+  <div>
+    <label for="minutos">Minutos (1 a 60):</label>
+    <input type="number" id="minutos" min="1" max="60" value="5">
+  </div>
+
+  <div class="controles">
+    <button onclick="iniciarTemporizador()">Iniciar</button>
+    <button onclick="resetearTemporizador()">Resetear</button>
+  </div>
+
+  <div id="temporizador">00:00</div>
+
+  <script>
+    let tiempoTotal = 0;
+    let intervalo = null;
+
+    function actualizarDisplay(tiempo) {
+      const minutos = Math.floor(tiempo / 60);
+      const segundos = tiempo % 60;
+      document.getElementById('temporizador').textContent =
+        `${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`;
+    }
+
+    function iniciarTemporizador() {
+      const entradaMinutos = parseInt(document.getElementById('minutos').value);
+
+      if (isNaN(entradaMinutos) || entradaMinutos < 1 || entradaMinutos > 60) {
+        alert("Ingresa un número válido entre 1 y 60.");
+        return;
+      }
+
+      clearInterval(intervalo); // Detiene cualquier temporizador previo
+      tiempoTotal = entradaMinutos * 60;
+      actualizarDisplay(tiempoTotal);
+
+      intervalo = setInterval(() => {
+        if (tiempoTotal > 0) {
+          tiempoTotal--;
+          actualizarDisplay(tiempoTotal);
+        } else {
+          clearInterval(intervalo);
+          document.getElementById('temporizador').textContent = "¡Tiempo finalizado!";
+        }
+      }, 1000);
+    }
+
+    function resetearTemporizador() {
+      clearInterval(intervalo);
+      const entradaMinutos = parseInt(document.getElementById('minutos').value);
+      if (!isNaN(entradaMinutos)) {
+        tiempoTotal = entradaMinutos * 60;
+        actualizarDisplay(tiempoTotal);
+      } else {
+        document.getElementById('temporizador').textContent = "00:00";
+      }
+    }
+
+    // Mostrar el tiempo inicial
+    resetearTemporizador();
+  </script>
+
+</body>
+</html>
+
