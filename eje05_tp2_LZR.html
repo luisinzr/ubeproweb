@@ -85,32 +85,27 @@
     const error = document.getElementById('mensajeError');
 
     formulario.addEventListener('submit', function(evento) {
-      evento.preventDefault();
+  evento.preventDefault();
 
-      const nombre = document.getElementById('nombre').value.trim();
-      const correo = document.getElementById('correo').value.trim();
-      const clave = document.getElementById('clave').value.trim();
+  const nombre = document.getElementById('nombre').value.trim();
+  const correo = document.getElementById('correo').value.trim();
+  const clave = document.getElementById('clave').value.trim();
 
-      if (nombre === '' || correo === '' || clave === '') {
-        error.textContent = 'Por favor, completa todos los campos.';
-       }else if (clave.length < 6) {
-        error.textContent = 'La contraseña debe tener al menos 6 caracteres.';
-      } else {
-        error.textContent = '';
-        alert('Formulario enviado correctamente ✅');
-        // formulario.submit(); // descomenta si deseas enviarlo
-      }
-      function showTime() {
-	document.getElementById('currentTime').innerHTML = new Date().toUTCString();
-     }
-       showTime();
-       setInterval(function () {
-	     showTime();
-      }, 1000);
-      
-    });
+  if (nombre === '' || correo === '' || clave === '') {
+    error.textContent = 'Por favor, completa todos los campos.';
+  } else if (clave.length < 6) {
+    error.textContent = 'La contraseña debe tener al menos 6 caracteres.';
+  } else {
+    error.textContent = '';
+    alert('Formulario enviado correctamente ✅');
     
-  </script>
+  }
+});
+
+      </script>
 
 </body>
 </html>
+
+    
+ 
