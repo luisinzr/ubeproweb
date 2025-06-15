@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Menú de Películas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: blue;
+      color: white;
+      margin: 0;
+    }
+
+    nav {
+      background-color: black;
+      padding: 10px;
+    }
+
+    ul.menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    ul.menu > li {
+      position: relative;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+
+    ul.menu > li > a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      display: block;
+    }
+
+    ul.submenu {
+      display: none;
+      position: absolute;
+      background-color: black;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      top: 40px;
+      left: 0;
+      border-radius: 5px;
+      z-index: 100;
+    }
+
+    ul.submenu li a {
+      padding: 10px 15px;
+      display: block;
+      text-decoration: none;
+      color: white;
+      font-size: 15px;
+    }
+
+    ul.submenu li a:hover {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul class="menu">
+      <li>
+        <a onclick="toggleSubmenu('accion')">Acción ▾</a>
+        <ul class="submenu" id="accion">
+          <li><a href="#">John Wick</a></li>
+          <li><a href="#">Misión Imposible</a></li>
+          <li><a href="#">Mad Max: Furia en el Camino</a></li>
+        </ul>
+      </li>
+      <li>
+        <a onclick="toggleSubmenu('comedia')">Comedia ▾</a>
+        <ul class="submenu" id="comedia">
+          <li><a href="#">¿Qué pasó ayer?</a></li>
+          <li><a href="#">Supercool</a></li>
+          <li><a href="#">Un detective suelto en Hollywood</a></li>
+        </ul>
+      </li>
+      <li>
+        <a onclick="toggleSubmenu('terror')">Terror ▾</a>
+        <ul class="submenu" id="terror">
+          <li><a href="#">El Conjuro</a></li>
+          <li><a href="#">It (Eso)</a></li>
+          <li><a href="#">Actividad Paranormal</a></li>
+        </ul>
+      </li>
+      <li>
+        <a onclick="toggleSubmenu('drama')">Drama ▾</a>
+        <ul class="submenu" id="drama">
+          <li><a href="#">En busca de la felicidad</a></li>
+          <li><a href="#">El Padrino</a></li>
+          <li><a href="#">Forrest Gump</a></li>
+        </ul>
+      </li>
+      <li>
+        <a onclick="toggleSubmenu('ciencia')">Ciencia Ficción ▾</a>
+        <ul class="submenu" id="ciencia">
+          <li><a href="#">Interestelar</a></li>
+          <li><a href="#">Matrix</a></li>
+          <li><a href="#">Blade Runner 2049</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <script>
+    function toggleSubmenu(id) {
+      const submenu = document.getElementById(id);
+      const allSubmenus = document.querySelectorAll('.submenu');
+
+      allSubmenus.forEach(function(menu) {
+        if (menu !== submenu) {
+          menu.style.display = 'none';
+        }
+      });
+
+      submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('nav')) {
+        document.querySelectorAll('.submenu').forEach(menu => menu.style.display = 'none');
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Tareas</title>
+  <style>
+    body {
+      font-family: Arial ;
+      background-color: #1c1c1c;
+       color: white;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      color: white;
+      font-size: 50px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 280px;
+      border: none;
+      border-radius: 5px;
+      color: black;
+      font-size: 20px;
+    }
+
+    button {
+      padding: 10px 15px;
+      margin-left: 8px;
+      background-color: yellow;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      max-width: 400px;
+      margin: 30px auto;
+    }
+
+    li {
+      background-color: #333;
+      margin: 10px 0;
+      padding: 10px 15px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .delete {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    
+  </style>
+</head>
+<body>
+
+  <h1>Lista de Tareas</h1>
+  <input type="text" id="tareaInput" placeholder="Escribe una tarea...">
+  <button onclick="agregarTarea()">Agregar</button>
+
+  <ul id="listaTareas"></ul>
+
+  <script>
+    function agregarTarea() {
+      const input = document.getElementById("tareaInput");
+      const texto = input.value.trim();
+
+      if (texto !== "") {
+        const lista = document.getElementById("listaTareas");
+        const li = document.createElement("li");
+
+        li.innerHTML = `
+          ${texto}
+          <button class="delete" onclick="eliminarTarea(this)">Eliminar</button>
+        `;
+
+        lista.appendChild(li);
+        input.value = "";
+      } else {
+        alert("Por favor, escribe una tarea.");
+      }
+    }
+
+    function eliminarTarea(boton) {
+      const tarea = boton.parentElement;
+      tarea.remove();
+    }
+    
+    
+  </script>
+  
+  
+</body>
+
+</html>
