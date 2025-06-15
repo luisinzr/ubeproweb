@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juego de Preguntas y Respuestas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: blue;
+      color: #fff;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      font-size: 17px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .pregunta {
+      margin-bottom: 25px;
+      padding: 15px;
+      background: #1f1f1f;
+      border-radius: 8px;
+    }
+
+    .opcion {
+      display: block;
+      margin: 8px 0;
+      padding: 10px;
+      background-color: #333;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+      width: 100%;
+      text-align: left;
+    }
+
+    .opcion:hover {
+      background-color: #00c853;
+    }
+
+    .opcion.seleccionada {
+      background-color: #00e676;
+      color: black;
+      pointer-events: none;
+    }
+
+    #finalizar {
+      margin-top: 30px;
+      padding: 12px 20px;
+      background-color: #2196f3;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #resultado {
+      margin-top: 30px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #00e676;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Juego de Razonamiento Matemático</h1>
+
+  <div id="contenedorPreguntas"></div>
+
+  <button id="finalizar">Finalizar</button>
+  <div id="resultado"></div>
+
+  <script>
+    const preguntas = [
+      {
+        texto: "¿Cuál de los siguientes números es un número primo?",
+        opciones: ["21", "17", "15"],
+        correcta: 1 //las posicion correcta se toma de 0-1-2 en este caso es 17 posicion 1
+      },
+      {
+        texto: "Si x + 3 = 10, ¿cuánto vale x?",
+        opciones: ["7", "13", "3"],
+        correcta: 0
+      },
+      {
+        texto: "¿Cuál es el 25% de 160?",
+        opciones: ["30", "40", "50"],
+        correcta: 1
+      },
+      {
+        texto: "¿Cuál número completa la secuencia? 2, 4, 8, 16, __",
+        opciones: ["20", "30", "32"],
+        correcta: 2
+      },
+      {
+        texto: "Si una camisa cuesta $60 y tiene un 20% de descuento, ¿cuánto pagas?",
+        opciones: ["$48", "$50", "$52"],
+        correcta: 0
+      }
+    ];
+
+    const respuestasUsuario = new Array(preguntas.length).fill(null);
+
+    const contenedor = document.getElementById("contenedorPreguntas");
+
+    preguntas.forEach((pregunta, i) => {
+      const div = document.createElement("div");
+      div.className = "pregunta";
+
+      const titulo = document.createElement("h3");
+      titulo.textContent = `${i + 1}. ${pregunta.texto}`;
+      div.appendChild(titulo);
+
+      pregunta.opciones.forEach((opcion, j) => {
+        const boton = document.createElement("button");
+        boton.className = "opcion";
+        boton.textContent = opcion;
+
+        boton.onclick = () => {
+          // Desactivar todos los botones de esta pregunta
+          const botones = div.querySelectorAll(".opcion");
+          botones.forEach(b => b.classList.remove("seleccionada"));
+          boton.classList.add("seleccionada");
+          respuestasUsuario[i] = j;
+        };
+
+        div.appendChild(boton);
+      });
+
+      contenedor.appendChild(div);
+    });
+
+    document.getElementById("finalizar").onclick = () => {
+      let puntuacion = 0;
+      preguntas.forEach((pregunta, i) => {
+        if (respuestasUsuario[i] === pregunta.correcta) {
+          puntuacion += 20;
+        }
+      });
+
+      document.getElementById("resultado").textContent =
+        `Tu puntuación es: ${puntuacion} de 100 puntos.`;
+    };
+  </script>
+
+</body>
+</html>
+
