@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nombre = limpiar($_POST["nombre"]);
         $clave = limpiar($_POST["clave"]);
 
-        // Validar solo contraseña
+        // Validar solo contraseña   usuarios contraseña 0000 y administrador 1111
         if (($rol == "Usuario" && $clave === "0000") || ($rol == "Administrador" && $clave === "1111")) {
 
             // Buscar usuario en DB
