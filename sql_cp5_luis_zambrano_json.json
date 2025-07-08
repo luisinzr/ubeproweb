@@ -1,0 +1,351 @@
+[
+{"type":"header","version":"5.2.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"biblioteca_db"},
+{"type":"table","name":"books","database":"biblioteca_db","data":
+[
+{"id":"1","title":"El Quijote","author":"Miguel de Cervantes","year":"1605","genre":"Novela","quantity":"5"},
+{"id":"2","title":"Cien Años de Soledad","author":"Gabriel García Márquez","year":"1967","genre":"Realismo Mágico","quantity":"3"},
+{"id":"3","title":"1984","author":"George Orwell","year":"1949","genre":"Distopía","quantity":"7"},
+{"id":"4","title":"Orgullo y Prejuicio","author":"Jane Austen","year":"1813","genre":"Romance","quantity":"4"},
+{"id":"5","title":"Donde los árboles cantan","author":"Laura Gallego","year":"2011","genre":"Fantasía","quantity":"6"},
+{"id":"6","title":"Crimen y Castigo","author":"Fiódor Dostoievski","year":"1866","genre":"Filosofía","quantity":"2"},
+{"id":"7","title":"El Principito","author":"Antoine de Saint-Exupéry","year":"1943","genre":"Fábula","quantity":"10"},
+{"id":"8","title":"Las Mil y Una Noches","author":"Anónimo","year":null,"genre":"Cuentos","quantity":"5"},
+{"id":"9","title":"Moby Dick","author":"Herman Melville","year":"1851","genre":"Aventura","quantity":"3"},
+{"id":"10","title":"La Odisea","author":"Homero","year":null,"genre":"Épica","quantity":"4"},
+{"id":"11","title":"Alicia en el País","author":"Lewis Carroll","year":"1865","genre":"Fantasía","quantity":"8"},
+{"id":"12","title":"Un Mundo Feliz","author":"Aldous Huxley","year":"1932","genre":"Distopía","quantity":"6"},
+{"id":"13","title":"El Alquimista","author":"Paulo Coelho","year":"1988","genre":"Aventura Espiritual","quantity":"9"},
+{"id":"14","title":"El Nombre de la Rosa","author":"Umberto Eco","year":"1980","genre":"Misterio","quantity":"3"},
+{"id":"15","title":"La Sombra del Viento","author":"Carlos Ruiz Zafón","year":"2001","genre":"Misterio","quantity":"7"},
+{"id":"16","title":"Rebelión en la Granja","author":"George Orwell","year":"1945","genre":"Sátira","quantity":"5"},
+{"id":"17","title":"Fahrenheit 451","author":"Ray Bradbury","year":"1953","genre":"Ciencia Ficción","quantity":"4"},
+{"id":"18","title":"Drácula","author":"Bram Stoker","year":"1897","genre":"Terror","quantity":"2"},
+{"id":"19","title":"Frankenstein","author":"Mary Shelley","year":"1818","genre":"Gótico","quantity":"3"},
+{"id":"20","title":"Los Miserables","author":"Victor Hugo","year":"1862","genre":"Histórica","quantity":"4"}
+]
+}
+,{"type":"table","name":"roles","database":"biblioteca_db","data":
+[
+{"id":"1","name":"Administrator"},
+{"id":"2","name":"Librarian"},
+{"id":"3","name":"Reader"}
+]
+}
+,{"type":"table","name":"transactions","database":"biblioteca_db","data":
+[
+
+]
+}
+,{"type":"table","name":"users","database":"biblioteca_db","data":
+[
+{"id":"1","username":"luis","email":"luis@gmail.com","password":"$2y$10$cqStGYCRkfMYOyFgi3nAxO7tsdBBivjPnR60Tsnq5QDECau8l3.\/u","role_id":"3"},
+{"id":"2","username":"Administrador","email":"admin@gmail.com","password":"$2y$10$yq72wOl6M0QKH6886jB9eOdTg0.QPT5tHDIg07Vn01eRblcAhM2Qq","role_id":"3"},
+{"id":"3","username":"Bibliotecario","email":"biblio@gmail.com","password":"$2y$10$hJCOq3qWUs.jQOS9fDJS0OrJk4P1iCfvigd3\/UtaWGBnfkFAsb.P2","role_id":"3"}
+]
+}
+{"type":"database","name":"biblioteca_online"},
+,{"type":"table","name":"libros","database":"biblioteca_online","data":
+[
+{"id":"1","titulo":"Cien años","autor":"Gabriel García Márquez"},
+{"id":"2","titulo":"1984","autor":"George Orwell"},
+{"id":"3","titulo":"El Principito","autor":"Antoine de Saint-Exupéry"},
+{"id":"4","titulo":"Crónica","autor":"Gabriel García Márquez"},
+{"id":"5","titulo":"Rayuela","autor":"Julio Cortázar"},
+{"id":"6","titulo":"Ficciones","autor":"Jorge Luis Borges"},
+{"id":"7","titulo":"Pedro Páramo","autor":"Juan Rulfo"},
+{"id":"8","titulo":"Aura","autor":"Carlos Fuentes"},
+{"id":"9","titulo":"El túnel","autor":"Ernesto Sabato"},
+{"id":"10","titulo":"La tregua","autor":"Mario Benedetti"},
+{"id":"11","titulo":"Don Quijote","autor":"Miguel de Cervantes"},
+{"id":"12","titulo":"Los de abajo","autor":"Mariano Azuela"},
+{"id":"13","titulo":"La sombra del viento","autor":"Carlos Ruiz Zafón"},
+{"id":"14","titulo":"El alquimista","autor":"Paulo Coelho"},
+{"id":"15","titulo":"Ensayo sobre la ceguera","autor":"José Saramago"},
+{"id":"16","titulo":"La casa de los espíritus","autor":"Isabel Allende"},
+{"id":"17","titulo":"Amor en tiempos del cólera","autor":"García Márquez"},
+{"id":"18","titulo":"Demian","autor":"Hermann Hesse"},
+{"id":"19","titulo":"La ciudad y los perros","autor":"Mario Vargas Llosa"},
+{"id":"20","titulo":"Travesuras de la niña mala","autor":"Mario Vargas Llosa"}
+]
+}
+,{"type":"table","name":"roles","database":"biblioteca_online","data":
+[
+{"id":"1","nombre_rol":"Administrador"},
+{"id":"2","nombre_rol":"Bibliotecario"},
+{"id":"3","nombre_rol":"Lector"}
+]
+}
+,{"type":"table","name":"transacciones","database":"biblioteca_online","data":
+[
+
+]
+}
+,{"type":"table","name":"usuarios","database":"biblioteca_online","data":
+[
+
+]
+}
+{"type":"database","name":"cp5_tareas"},
+,{"type":"table","name":"roles","database":"cp5_tareas","data":
+[
+{"rol_id":"1","rol_nombre":"Administrador"},
+{"rol_id":"2","rol_nombre":"Gerente de proyecto"},
+{"rol_id":"3","rol_nombre":"Miembro del equipo"}
+]
+}
+,{"type":"table","name":"tareas","database":"cp5_tareas","data":
+[
+{"id":"23","titulo":"Configuración del Servidor","descripcion":"Instalar Apache, PHP y MySQL en el entorno local.","estado":"Pendiente","usuario_id":"113"},
+{"id":"24","titulo":"Desarrollo Frontend","descripcion":"Maquetar la interfaz con HTML, CSS y Bootstrap.","estado":"En proceso","usuario_id":"101"},
+{"id":"25","titulo":"Implementación de Login","descripcion":"Crear sistema de autenticación con sesiones.","estado":"Pendiente","usuario_id":"113"},
+{"id":"26","titulo":"Gestión de Usuarios","descripcion":"Permitir crear, editar y eliminar usuarios.","estado":"Pendiente","usuario_id":"114"},
+{"id":"27","titulo":"Control de Accesos","descripcion":"Restringir funcionalidades según el rol del usuario.","estado":"Pendiente","usuario_id":null},
+{"id":"28","titulo":"Panel de Estadísticas","descripcion":"Mostrar métricas clave del proyecto.","estado":"Pendiente","usuario_id":"101"},
+{"id":"29","titulo":"Sistema de Comentarios","descripcion":"Permitir feedback en tareas asignadas.","estado":"Pendiente","usuario_id":"101"},
+{"id":"30","titulo":"Documentación Final","descripcion":"Redactar la guía técnica y manual del usuario.","estado":"Pendiente","usuario_id":"101"},
+{"id":"31","titulo":"Análisis de Requisitos","descripcion":"Recolectar y documentar requerimientos del cliente.","estado":"Pendiente","usuario_id":null},
+{"id":"32","titulo":"Diseño de Base de Datos","descripcion":"Crear modelo entidad-relación para la base de datos.","estado":"Pendiente","usuario_id":null},
+{"id":"33","titulo":"Configuración del Servidor","descripcion":"Instalar y configurar Apache, PHP y MySQL.","estado":"Pendiente","usuario_id":"101"},
+{"id":"34","titulo":"Desarrollo Frontend","descripcion":"Maquetar la interfaz usando HTML, CSS y Bootstrap.","estado":"Pendiente","usuario_id":null},
+{"id":"35","titulo":"Implementación de Login","descripcion":"Desarrollar sistema de autenticación con sesiones.","estado":"Pendiente","usuario_id":null},
+{"id":"36","titulo":"Gestión de Usuarios","descripcion":"Crear funcionalidades para administrar usuarios.","estado":"Pendiente","usuario_id":null},
+{"id":"37","titulo":"Control de Accesos","descripcion":"Restringir accesos según roles definidos.","estado":"Pendiente","usuario_id":null},
+{"id":"38","titulo":"Panel de Estadísticas","descripcion":"Mostrar métricas y reportes del proyecto.","estado":"Pendiente","usuario_id":null},
+{"id":"39","titulo":"Sistema de Comentarios","descripcion":"Implementar feedback para tareas asignadas.","estado":"Pendiente","usuario_id":null},
+{"id":"40","titulo":"Documentación Final","descripcion":"Redactar manual técnico y de usuario.","estado":"Pendiente","usuario_id":null},
+{"id":"41","titulo":"Integración con API Externa","descripcion":"Conectar sistema con API de terceros.","estado":"Pendiente","usuario_id":null},
+{"id":"42","titulo":"Optimización de Consultas SQL","descripcion":"Mejorar rendimiento de las consultas.","estado":"Pendiente","usuario_id":null},
+{"id":"43","titulo":"Pruebas Unitarias","descripcion":"Crear y ejecutar pruebas para funciones críticas.","estado":"Pendiente","usuario_id":null},
+{"id":"44","titulo":"Desarrollo Backend","descripcion":"Programar lógica del servidor y APIs.","estado":"Pendiente","usuario_id":null},
+{"id":"45","titulo":"Implementación de Seguridad","descripcion":"Agregar validaciones y protección CSRF.","estado":"Pendiente","usuario_id":null},
+{"id":"46","titulo":"Diseño Responsivo","descripcion":"Asegurar que la web funcione en móviles.","estado":"Pendiente","usuario_id":null},
+{"id":"47","titulo":"Configuración de Entorno","descripcion":"Preparar entorno local y de producción.","estado":"Pendiente","usuario_id":null},
+{"id":"48","titulo":"Manejo de Sesiones","descripcion":"Controlar sesiones y tiempo de expiración.","estado":"Pendiente","usuario_id":null},
+{"id":"49","titulo":"Carga y Gestión de Archivos","descripcion":"Subir y administrar documentos y archivos.","estado":"Pendiente","usuario_id":null},
+{"id":"50","titulo":"Notificaciones por Email","descripcion":"Enviar alertas y mensajes a usuarios.","estado":"Pendiente","usuario_id":null},
+{"id":"51","titulo":"Interfaz de Usuario","descripcion":"Mejorar experiencia y usabilidad.","estado":"Pendiente","usuario_id":null},
+{"id":"52","titulo":"Despliegue en Servidor","descripcion":"Subir proyecto a servidor remoto.","estado":"Pendiente","usuario_id":null},
+{"id":"53","titulo":"Backup de Base de Datos","descripcion":"Crear copias de seguridad automáticas.","estado":"Pendiente","usuario_id":null},
+{"id":"54","titulo":"Control de Versiones","descripcion":"Configurar repositorio Git y ramas.","estado":"Pendiente","usuario_id":null},
+{"id":"55","titulo":"Diseño de Base de Datos Avanzado","descripcion":"Implementar índices y claves foráneas.","estado":"Pendiente","usuario_id":null},
+{"id":"56","titulo":"Documentación de Código","descripcion":"Agregar comentarios y documentación interna.","estado":"Pendiente","usuario_id":null},
+{"id":"57","titulo":"Automatización de Tareas","descripcion":"Crear scripts para tareas repetitivas.","estado":"Pendiente","usuario_id":null},
+{"id":"58","titulo":"Migración de Datos","descripcion":"Importar datos desde sistemas antiguos.","estado":"Pendiente","usuario_id":null},
+{"id":"59","titulo":"Gestión de Roles y Permisos","descripcion":"Definir y aplicar permisos granularmente.","estado":"Pendiente","usuario_id":null},
+{"id":"60","titulo":"Creación de Reportes","descripcion":"Generar reportes dinámicos para usuarios.","estado":"Pendiente","usuario_id":null},
+{"id":"61","titulo":"Integración con Redes Sociales","descripcion":"Permitir login y compartir contenido.","estado":"Pendiente","usuario_id":null},
+{"id":"62","titulo":"Validación de Formularios","descripcion":"Implementar validaciones en frontend y backend.","estado":"Pendiente","usuario_id":null},
+{"id":"63","titulo":"Auditoría de Cambios","descripcion":"Registrar modificaciones en las tareas.","estado":"Pendiente","usuario_id":null},
+{"id":"64","titulo":"Optimización de Imágenes","descripcion":"Reducir tamaño y mejorar carga.","estado":"Pendiente","usuario_id":null},
+{"id":"65","titulo":"Implementación de Cache","descripcion":"Mejorar velocidad con sistema de cache.","estado":"Pendiente","usuario_id":null},
+{"id":"66","titulo":"Diseño de API REST","descripcion":"Crear endpoints para comunicación externa.","estado":"Pendiente","usuario_id":null},
+{"id":"67","titulo":"Gestión de Sesiones Activas","descripcion":"Monitorear y administrar sesiones abiertas.","estado":"Pendiente","usuario_id":null},
+{"id":"68","titulo":"Soporte Multilenguaje","descripcion":"Añadir soporte para varios idiomas.","estado":"Pendiente","usuario_id":null},
+{"id":"69","titulo":"Implementación de Chat","descripcion":"Agregar sistema de chat entre usuarios.","estado":"Pendiente","usuario_id":null},
+{"id":"70","titulo":"Validación de Seguridad","descripcion":"Revisar vulnerabilidades comunes.","estado":"Pendiente","usuario_id":null},
+{"id":"71","titulo":"Configuración de HTTPS","descripcion":"Implementar certificados SSL\/TLS.","estado":"Pendiente","usuario_id":null},
+{"id":"72","titulo":"Pruebas de Integración","descripcion":"Verificar interacción entre módulos.","estado":"Pendiente","usuario_id":null},
+{"id":"73","titulo":"Optimización SEO","descripcion":"Mejorar posicionamiento en motores de búsqueda.","estado":"Pendiente","usuario_id":null},
+{"id":"74","titulo":"Configuración de Logs","descripcion":"Registrar actividad y errores del sistema.","estado":"Pendiente","usuario_id":null},
+{"id":"75","titulo":"Importación y Exportación","descripcion":"Agregar funcionalidades para importar y exportar datos.","estado":"Pendiente","usuario_id":null},
+{"id":"76","titulo":"Diseño UI\/UX","descripcion":"Realizar mejoras visuales y de usabilidad.","estado":"Pendiente","usuario_id":null},
+{"id":"77","titulo":"Monitorización del Sistema","descripcion":"Implementar alertas y seguimiento.","estado":"Pendiente","usuario_id":null},
+{"id":"78","titulo":"Automatización de Despliegue","descripcion":"Configurar pipelines CI\/CD.","estado":"Pendiente","usuario_id":null},
+{"id":"79","titulo":"Implementación de WebSockets","descripcion":"Permitir comunicación en tiempo real.","estado":"Pendiente","usuario_id":null},
+{"id":"80","titulo":"Creación de Tutoriales","descripcion":"Documentar uso del sistema para usuarios.","estado":"Pendiente","usuario_id":null},
+{"id":"81","titulo":"Pruebas de Carga","descripcion":"Simular tráfico y medir rendimiento.","estado":"Pendiente","usuario_id":null}
+]
+}
+,{"type":"table","name":"usuarios","database":"cp5_tareas","data":
+[
+{"id":"100","nombre":"luis","email":"luis@gmail.com","clave":"0000","rol_id":"1"},
+{"id":"101","nombre":"Carlos","email":"carlos@gmail.com","clave":"2222","rol_id":"3"},
+{"id":"103","nombre":"Pedro","email":"pedro@gmail.com","clave":"1111","rol_id":"2"},
+{"id":"107","nombre":"Juan","email":"juan@gmail.com","clave":"2222","rol_id":"3"},
+{"id":"108","nombre":"Maria","email":"maria@gmail.com","clave":"2222","rol_id":"3"},
+{"id":"111","nombre":"jaime","email":"jaime@gmail.com","clave":"2222","rol_id":"3"},
+{"id":"112","nombre":"Ricardo","email":"ricardo@gmail.com","clave":"1111","rol_id":"2"},
+{"id":"113","nombre":"rosa","email":"rosa@gmail.com","clave":"2222","rol_id":"3"},
+{"id":"114","nombre":"cecilia","email":"cecilia@gmail.com","clave":"2222","rol_id":"3"},
+{"id":"115","nombre":"jorge","email":"jorge@gmail.com","clave":"0000","rol_id":"1"}
+]
+}
+{"type":"database","name":"lista_tareas_db"},
+,{"type":"table","name":"tareas","database":"lista_tareas_db","data":
+[
+{"id":"5","descripcion":"Documentar sistema","autor_id":"1","nombre_usuario":null,"clave_usuario":null},
+{"id":"7","descripcion":"Realizar pruebas QA","autor_id":"4","nombre_usuario":null,"clave_usuario":null},
+{"id":"8","descripcion":"Planificar sprints","autor_id":"4","nombre_usuario":null,"clave_usuario":null}
+]
+}
+,{"type":"table","name":"usuarios","database":"lista_tareas_db","data":
+[
+{"id":"1","nombre":"luis","rol":"Usuario"},
+{"id":"2","nombre":"Carlos","rol":"Administrador"},
+{"id":"3","nombre":"Pedro","rol":"Administrador"},
+{"id":"4","nombre":"Maria","rol":"Usuario"}
+]
+}
+{"type":"database","name":"mi_login_db"},
+,{"type":"table","name":"usuarios","database":"mi_login_db","data":
+[
+{"id":"11","username":"juan","password":"1000"},
+{"id":"2","username":"ana","password":"1001"},
+{"id":"17","username":"pedro","password":"1002"},
+{"id":"15","username":"maria","password":"1003"},
+{"id":"5","username":"carlos","password":"1004"},
+{"id":"13","username":"laura","password":"1005"},
+{"id":"8","username":"diego","password":"1006"},
+{"id":"16","username":"paula","password":"1007"},
+{"id":"3","username":"andres","password":"1008"},
+{"id":"19","username":"sofia","password":"1009"},
+{"id":"14","username":"luis","password":"1010"},
+{"id":"4","username":"camila","password":"1011"},
+{"id":"6","username":"david","password":"1012"},
+{"id":"12","username":"karla","password":"1013"},
+{"id":"10","username":"jorge","password":"1014"},
+{"id":"7","username":"diana","password":"1015"},
+{"id":"9","username":"fernando","password":"1016"},
+{"id":"20","username":"valeria","password":"1017"},
+{"id":"18","username":"ricardo","password":"1018"},
+{"id":"1","username":"alejandra","password":"1019"}
+]
+}
+{"type":"database","name":"phpmyadmin"},
+,{"type":"table","name":"pma__bookmark","database":"phpmyadmin","data":
+[
+
+]
+}
+,{"type":"table","name":"pma__central_columns","database":"phpmyadmin","data":
+[
+
+]
+}
+,{"type":"table","name":"pma__column_info","database":"phpmyadmin","data":
+[
+
+]
+}
+,{"type":"table","name":"pma__designer_settings","database":"phpmyadmin","data":
+[
+
+]
+}
+,{"type":"table","name":"pma__export_templates","database":"phpmyadmin","data":
+[
+
+]
+}
+,{"type":"table","name":"pma__favorite","database":"phpmyadmin","data":
+[
+
+]
+}
+,{"type":"table","name":"pma__history","database":"phpmyadmin","data":
+[
+
+]
+}
+,{"type":"table","name":"pma__navigationhiding","database":"phpmyadmin","data":
+[
+
+]
+}
+,{"type":"table","name":"pma__pdf_pages","database":"phpmyadmin","data":
+[
+
+]
+}
+,{"type":"table","name":"pma__recent","database":"phpmyadmin","data":
+[
+{"username":"root","tables":"[{\"db\":\"cp5_tareas\",\"table\":\"usuarios\"},{\"db\":\"cp5_tareas\",\"table\":\"tareas\"},{\"db\":\"cp5_tareas\",\"table\":\"roles\"},{\"db\":\"mi_login_db\",\"table\":\"usuarios\"},{\"db\":\"biblioteca_online\",\"table\":\"usuarios\"},{\"db\":\"biblioteca_online\",\"table\":\"roles\"},{\"db\":\"biblioteca_db\",\"table\":\"books\"},{\"db\":\"biblioteca_db\",\"table\":\"users\"},{\"db\":\"tareas_equipo\",\"table\":\"usuarios_c5\"},{\"db\":\"tareas_equipo\",\"table\":\"tareas_c5\"}]"}
+]
+}
+,{"type":"table","name":"pma__relation","database":"phpmyadmin","data":
+[
+
+]
+}
+,{"type":"table","name":"pma__savedsearches","database":"phpmyadmin","data":
+[
+
+]
+}
+,{"type":"table","name":"pma__table_coords","database":"phpmyadmin","data":
+[
+
+]
+}
+,{"type":"table","name":"pma__table_info","database":"phpmyadmin","data":
+[
+
+]
+}
+,{"type":"table","name":"pma__table_uiprefs","database":"phpmyadmin","data":
+[
+{"username":"root","db_name":"cp5_tareas","table_name":"tareas","prefs":"{\"sorted_col\":\"`tareas`.`usuario_id` ASC\"}","last_update":"2025-07-08 08:46:28"},
+{"username":"root","db_name":"lista_tareas_db","table_name":"tareas","prefs":"{\"sorted_col\":\"`tareas`.`clave_usuario` DESC\"}","last_update":"2025-06-26 08:48:34"},
+{"username":"root","db_name":"tareas_equipo","table_name":"roles_c5","prefs":"{\"sorted_col\":\"`roles_c5`.`rol_id` ASC\"}","last_update":"2025-06-30 08:58:55"}
+]
+}
+,{"type":"table","name":"pma__tracking","database":"phpmyadmin","data":
+[
+
+]
+}
+,{"type":"table","name":"pma__userconfig","database":"phpmyadmin","data":
+[
+{"username":"root","timevalue":"2025-07-08 09:53:46","config_data":"{\"Console\\\/Mode\":\"collapse\",\"lang\":\"es\"}"}
+]
+}
+,{"type":"table","name":"pma__usergroups","database":"phpmyadmin","data":
+[
+
+]
+}
+,{"type":"table","name":"pma__users","database":"phpmyadmin","data":
+[
+
+]
+}
+{"type":"database","name":"tareas_equipo"},
+,{"type":"table","name":"roles_c5","database":"tareas_equipo","data":
+[
+{"rol_id":"1","rol_nombre":"Administrador"},
+{"rol_id":"2","rol_nombre":"Gerente de proyecto"},
+{"rol_id":"3","rol_nombre":"Miembro del equipo"}
+]
+}
+,{"type":"table","name":"tareas_c5","database":"tareas_equipo","data":
+[
+{"id":"1","titulo":"Red Neuronal Simple","descripcion":null,"estado":"Pendiente","usuario_id":null},
+{"id":"2","titulo":"Clasificador de Imágenes","descripcion":null,"estado":"Pendiente","usuario_id":null},
+{"id":"3","titulo":"Sistema Experto Médico","descripcion":null,"estado":"Pendiente","usuario_id":null},
+{"id":"4","titulo":"Predicción del Clima","descripcion":null,"estado":"Pendiente","usuario_id":null},
+{"id":"5","titulo":"Control de Semáforos","descripcion":null,"estado":"Pendiente","usuario_id":null},
+{"id":"6","titulo":"Reconocimiento de Voz","descripcion":null,"estado":"Pendiente","usuario_id":null},
+{"id":"7","titulo":"Chatbot de Atención","descripcion":null,"estado":"Pendiente","usuario_id":null},
+{"id":"8","titulo":"Visión por Computadora","descripcion":null,"estado":"Pendiente","usuario_id":null},
+{"id":"9","titulo":"Sistema de Recomendación","descripcion":null,"estado":"Pendiente","usuario_id":null},
+{"id":"10","titulo":"Optimización con Genéticos","descripcion":null,"estado":"Pendiente","usuario_id":null},
+{"id":"11","titulo":"Robot Seguidor de Línea","descripcion":null,"estado":"Pendiente","usuario_id":null},
+{"id":"12","titulo":"Predicción de Ventas IA","descripcion":null,"estado":"Pendiente","usuario_id":null},
+{"id":"13","titulo":"Clasificador de Texto","descripcion":null,"estado":"Pendiente","usuario_id":null},
+{"id":"14","titulo":"Sistema de Detección Facial","descripcion":null,"estado":"Pendiente","usuario_id":null},
+{"id":"15","titulo":"Monitoreo con IoT","descripcion":null,"estado":"Pendiente","usuario_id":null},
+{"id":"16","titulo":"Procesamiento de Lenguaje","descripcion":null,"estado":"Pendiente","usuario_id":null},
+{"id":"17","titulo":"Análisis de Sentimiento","descripcion":null,"estado":"Pendiente","usuario_id":null},
+{"id":"18","titulo":"Detección de Anomalías","descripcion":null,"estado":"Pendiente","usuario_id":null},
+{"id":"19","titulo":"Control Inteligente de Tráfico","descripcion":null,"estado":"Pendiente","usuario_id":null},
+{"id":"20","titulo":"Plataforma de Aprendizaje IA","descripcion":null,"estado":"Pendiente","usuario_id":null}
+]
+}
+,{"type":"table","name":"usuarios_c5","database":"tareas_equipo","data":
+[
+
+]
+}
+{"type":"database","name":"test"},
+]
